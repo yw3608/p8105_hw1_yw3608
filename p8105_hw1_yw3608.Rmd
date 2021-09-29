@@ -64,4 +64,10 @@ as.numeric(df$vec_factor)
 #The factor vector returns to 1,2 or 3, which is the 3 diffenent levels.
 ```
 
+# Problem 2
+**First, install the palmerpenguins packages,and write a short description of the penguins dataset.**
+```{r}
+data("penguins", package = "palmerpenguins")
+summary(penguins)
+```
 
