@@ -30,26 +30,38 @@ df
 
 **Next, try to take the mean of each variable in my dataframe**
 
-```{r,collapse=TRUE,message=FALSE,warning = FALSE}
+```{r,collapse=TRUE,message=FALSE ,warning =FALSE}
 mean(pull(df,score))
 mean(pull(df,gr_than_zero))
 mean(pull(df,vec_char))
 mean(pull(df,vec_factor))
 
-##Here, we can take the mean of a random sample of size 10 from a standard Normal distribution
-## We can also take the mean of logical vector indicating whether elements of the sample are greater than 0
-##We cannot take the mean of  character vector of length 10
-##We can not take the mean of a factor vector of length 10, with 3 different factor “levels”
+```
+
+
+```{r}
+#Here, we can take the mean of a random sample of size 10 from a standard Normal distribution
+#We can also take the mean of logical vector indicating whether elements of the sample are greater than 0
+#We cannot take the mean of  character vector of length 10
+#We can not take the mean of a factor vector of length 10, with 3 different factor “levels”**
+
 ```
 
 
 **Next, convert variables from logical vector, character and factor  to numeric by using the as.numeric function. Outputs are hide as instructed.**
 
-```{r, results='hide',warning = FALSE } 
+```{r,warning = FALSE ,results='hide' } 
 as.numeric(df$gr_than_zero)
 as.numeric(df$vec_char)
 as.numeric(df$vec_factor)
+
 ```
 
+```{r}
+#By using as.numeric function, the logical vector changed to either 0 or 1, which means that TRUE OR FALSE. 
+#The character vector still shows the warning message which can explain the warning message as 
+#I tried to take the mean of it.Argument is not numeric or logical will return NA.
+#The factor vector returns to 1,2 or 3, which is the 3 diffenent levels.
+```
 
 
