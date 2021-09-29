@@ -9,7 +9,7 @@ I'm yw3608's homework1!
 
 # Problem 1
 **First, load the tidyverse library.**
-```{r,results= 'hide',message=FALSE}
+```{r,results = 'hide',message =FALSE}
 library(tidyverse)
 ```
 
@@ -19,10 +19,10 @@ library(tidyverse)
 
 df = 
   tibble(
-    score=rnorm(10,mean=0,sd=1),
-gr_than_zero =score > 0,
-vec_char =c("Lily","Cody","Tommy","Sally","Jack","Anna","Lucy","Coco","Jerry","Stella"),
-vec_factor =factor(c("high school diploma","college diploma","college diploma","college diploma","college diploma","college diploma","high school diploma","postgraduate diploma","postgraduate diploma","high school diploma"))
+    score = rnorm(10,mean = 0,sd = 1),
+gr_than_zero = score > 0,
+vec_char = c("Lily","Cody","Tommy","Sally","Jack","Anna","Lucy","Coco","Jerry","Stella"),
+vec_factor = factor(c("high school diploma","college diploma","college diploma","college diploma","college diploma","college diploma","high school diploma","postgraduate diploma","postgraduate diploma","high school diploma"))
 )
 df
 ```
@@ -30,7 +30,7 @@ df
 
 **Next, try to take the mean of each variable in my dataframe**
 
-```{r,collapse=TRUE,message=FALSE ,warning =FALSE}
+```{r,collapse = TRUE,message = FALSE ,warning = FALSE}
 mean(pull(df,score))
 mean(pull(df,gr_than_zero))
 mean(pull(df,vec_char))
@@ -50,7 +50,7 @@ mean(pull(df,vec_factor))
 
 **Next, convert variables from logical vector, character and factor  to numeric by using the as.numeric function. Outputs are hide as instructed.**
 
-```{r,warning = FALSE ,results='hide' } 
+```{r,warning = FALSE ,results ='hide' } 
 as.numeric(df$gr_than_zero)
 as.numeric(df$vec_char)
 as.numeric(df$vec_factor)
@@ -79,24 +79,25 @@ summary(penguins)
 ```
 
 **Secondly, get the size of the dataset by using nrow and ncol.**
-```{r,collapse=TRUE}
+```{r,collapse = TRUE}
 nrow(penguins)
 ncol(penguins)
 ##There are 344 rows and 8 colums.
 ```
 
-**Next,get the mean of flipper length.**
-```{r,collapse=TRUE}
+**Next, get the mean of flipper length.**
+```{r,collapse = TRUE}
 ##Here,I use the na.omit function to omit NA and named the NA-free dataset as penguins_new. 
 penguins_new = na.omit(penguins)
 mean(pull(penguins_new,flipper_length_mm))
 ```
 
 **Make a scatterplot of flipper_length_mm (y) vs bill_length_mm (x); color points using the species variable (adding color = ... inside of aes in your ggplot code )**
-```{r}
-ggplot(penguins_new,aes(bill_length_mm,flipper_length_mm,colour =species))+ 
+```{r,collapse = TRUE}
+ggplot(penguins_new,aes(bill_length_mm,flipper_length_mm,colour = species))+ 
   geom_point()
 getwd()
+ggsave(path = "./",plot=last_plot(),filename = "penguins.png")
 
 ```
 
