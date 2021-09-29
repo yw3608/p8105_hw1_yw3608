@@ -71,3 +71,19 @@ data("penguins", package = "palmerpenguins")
 summary(penguins)
 ```
 
+```{r}
+#The data in this dataset, including names / values of important variables
+#There are in total 8 varialbels.They are species, island,bill_length_mm,bill_depth_mm,flipper_length_mm
+#body_mass_g, sex and year.
+
+```
+
+**Second,get the size of the dataset by using nrow and ncol.**
+```{r,collapse=TRUE}
+nrow(penguins)
+ncol(penguins)
+##There are 344 rows and 8 colums.
+```
+```
+
+
