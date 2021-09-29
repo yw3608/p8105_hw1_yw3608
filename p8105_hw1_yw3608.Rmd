@@ -92,4 +92,11 @@ penguins_new = na.omit(penguins)
 mean(pull(penguins_new,flipper_length_mm))
 ```
 
+**Make a scatterplot of flipper_length_mm (y) vs bill_length_mm (x); color points using the species variable (adding color = ... inside of aes in your ggplot code )**
+```{r}
+ggplot(penguins_new,aes(bill_length_mm,flipper_length_mm,colour =species))+ 
+  geom_point()
+getwd()
+
+```
 
