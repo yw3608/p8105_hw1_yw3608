@@ -8,39 +8,44 @@ output:
 I'm yw3608's homework1! 
 
 # Problem 1
-##First, load the tidyverse library.
-```{r}
+**First, load the tidyverse library.**
+```{r,results= 'hide',message=FALSE}
 library(tidyverse)
 ```
 
-##Next, create a dataframe which satisfy the required question
+**Next, create a dataframe which satisfy the required question**
 
 ```{r}
 
-df= 
+df = 
   tibble(
     score=rnorm(10,mean=0,sd=1),
 gr_than_zero =score > 0,
 vec_char =c("Lily","Cody","Tommy","Sally","Jack","Anna","Lucy","Coco","Jerry","Stella"),
-vec_factor=factor(c("high school diploma","college diploma","college diploma","college diploma","college diploma","college diploma","high school diploma","postgraduate diploma","postgraduate diploma","high school diploma"))
+vec_factor =factor(c("high school diploma","college diploma","college diploma","college diploma","college diploma","college diploma","high school diploma","postgraduate diploma","postgraduate diploma","high school diploma"))
 )
 df
 ```
 
 
-##Next, try to take the mean of each variable in my dataframe
-```{r}
+**Next, try to take the mean of each variable in my dataframe**
+
+```{r,collapse=TRUE,message=FALSE,warning = FALSE}
 mean(pull(df,score))
 mean(pull(df,gr_than_zero))
 mean(pull(df,vec_char))
 mean(pull(df,vec_factor))
-##Here, we can take the mean of 
+
+##Here, we can take the mean of a random sample of size 10 from a standard Normal distribution
+## We can also take the mean of logical vector indicating whether elements of the sample are greater than 0
+##We cannot take the mean of  character vector of length 10
+##We can not take the mean of a factor vector of length 10, with 3 different factor “levels”
 ```
 
 
+**Next, convert variables from logical vector, character and factor  to numeric by using the as.numeric function. Outputs are hide as instructed.**
 
-
-```{r}
+```{r, results='hide',warning = FALSE } 
 as.numeric(df$gr_than_zero)
 as.numeric(df$vec_char)
 as.numeric(df$vec_factor)
