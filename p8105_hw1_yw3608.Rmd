@@ -78,12 +78,18 @@ summary(penguins)
 
 ```
 
-**Second,get the size of the dataset by using nrow and ncol.**
+**Secondly, get the size of the dataset by using nrow and ncol.**
 ```{r,collapse=TRUE}
 nrow(penguins)
 ncol(penguins)
 ##There are 344 rows and 8 colums.
 ```
+
+**Next,get the mean of flipper length.**
+```{r,collapse=TRUE}
+##Here,I use the na.omit function to omit NA and named the NA-free dataset as penguins_new. 
+penguins_new = na.omit(penguins)
+mean(pull(penguins_new,flipper_length_mm))
 ```
 
 
