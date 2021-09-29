@@ -1,30 +1,50 @@
 ---
 title: "p8105_hw1_yw3608"
-output:git_document
+author: "Yuxuan Wang"  
+date: "9/29/2021"
+output:
+  github_document
 ---
+I'm yw3608's homework1! 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Problem 1
+##First, load the tidyverse library.
+```{r}
+library(tidyverse)
+```
+
+##Next, create a dataframe which satisfy the required question
+
+```{r}
+
+df= 
+  tibble(
+    score=rnorm(10,mean=0,sd=1),
+gr_than_zero =score > 0,
+vec_char =c("Lily","Cody","Tommy","Sally","Jack","Anna","Lucy","Coco","Jerry","Stella"),
+vec_factor=factor(c("high school diploma","college diploma","college diploma","college diploma","college diploma","college diploma","high school diploma","postgraduate diploma","postgraduate diploma","high school diploma"))
+)
+df
+```
+
+
+##Next, try to take the mean of each variable in my dataframe
+```{r}
+mean(pull(df,score))
+mean(pull(df,gr_than_zero))
+mean(pull(df,vec_char))
+mean(pull(df,vec_factor))
+##Here, we can take the mean of 
 ```
 
 
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+as.numeric(df$gr_than_zero)
+as.numeric(df$vec_char)
+as.numeric(df$vec_factor)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
